@@ -1,0 +1,38 @@
+﻿using DAL;
+using Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL
+{
+    public class PeluqueroBusiness
+    {
+        private PeluquerosDAO peluquerosDAO = new PeluquerosDAO();
+        
+        public List<PeluqueroEntity> listaPeluqueros()
+        {
+            return peluquerosDAO.listarPeluqueros();
+        }
+
+
+        public void EliminarPeluquero(int id)
+        {
+
+
+            PeluqueroEntity pelBuscado = peluquerosDAO.getbyID(id);
+            if (pelBuscado == null) throw new Exception("El id que ingreso no existe");
+            peluquerosDAO.EliminarPeluquero(id);
+        }
+
+        public void AgregarPeluquero(PeluqueroEntity peluquero)
+        {
+            peluquerosDAO.agregarPeluquero(peluquero);
+        }
+
+
+
+    }
+}
