@@ -46,6 +46,7 @@
     <Compile Include="AuthBusiness.cs" />
     <Compile Include="PeluqueroBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionManager.cs" />
     <Compile Include="TurnoBusiness.cs" />
   </ItemGroup>
   <ItemGroup>

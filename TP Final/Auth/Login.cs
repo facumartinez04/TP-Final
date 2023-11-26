@@ -47,16 +47,18 @@ namespace TP_Final.Auth
         {
             try
             {
-
+                
                 AuthEntity entity = authBusiness.Login(new AuthEntity
                 {
                     Usuario = txtUser.Text,
                     password = txtPass.Text
                 });
+             
+                SessionManager.Login(entity);
+                SessionManager sesion = SessionManager.Instance;
+                MessageBox.Show("Logeado correctamente");
                 txtUser.Clear();
                 txtPass.Clear();
-                MessageBox.Show("Logeado correctamente");
-
                 if (entity.Usuario == "admin")
                 {
                     ReservaAdmin reserva = new ReservaAdmin();

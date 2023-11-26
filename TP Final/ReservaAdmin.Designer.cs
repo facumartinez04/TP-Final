@@ -67,6 +67,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreyApellido = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -313,6 +314,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cmbHorario);
             this.groupBox1.Controls.Add(this.label6);
@@ -464,6 +466,16 @@
             this.txtNombreyApellido.Size = new System.Drawing.Size(147, 20);
             this.txtNombreyApellido.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(11, 577);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(182, 31);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Cerrar Sesion";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ReservaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,6 +541,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

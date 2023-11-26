@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_Final.Auth;
 
 namespace TP_Final
 {
@@ -113,6 +114,22 @@ namespace TP_Final
             {
                 MessageBox.Show(ex.Message);
                 txtID.Clear();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SessionManager.Logout();
+                this.Close();
+                Login login = new Login();
+                login.Show();
+                login.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
