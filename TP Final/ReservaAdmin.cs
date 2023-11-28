@@ -224,5 +224,10 @@ namespace TP_Final
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
