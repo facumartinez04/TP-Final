@@ -63,7 +63,7 @@ namespace TP_Final
         {
             dataGridView1.DataSource = null;
             var lista = from l in turnoBusiness.listaTurnos()
-                        select new { l.idTurno , l.peluquero.nombreApellidoPeluquero, l.cliente.nombreApellido, l.DiaTurno, l.Hora, l.Estado, l.Servicio };
+                        select new { l.idTurno, l.peluquero.nombreApellidoPeluquero, l.cliente.nombreApellido, l.DiaTurno, l.Hora, l.Estado, l.Servicio };
 
             var resultados = lista.ToList();
 
@@ -79,7 +79,8 @@ namespace TP_Final
                 MessageBox.Show("Se elimino correctamente el Turno");
                 ListarData();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
                 txtIDEliminar.Clear();
             }
@@ -94,11 +95,11 @@ namespace TP_Final
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             List<TurnoEntity> turnosSeleccionados = new List<TurnoEntity>();
-          
+
 
             if (cmbFiltro.Text == "Fecha")
             {
-                if(txtFiltro.Text == "")
+                if (txtFiltro.Text == "")
                 {
                     ListarData();
                 }
@@ -107,9 +108,9 @@ namespace TP_Final
                     foreach (TurnoEntity turno in turnoBusiness.listaTurnos())
                     {
                         if (turno.FechaRegistro.ToString().Contains(txtFiltro.Text))
-                        {         
+                        {
                             turnosSeleccionados.Add(turno);
-                            
+
                         }
 
                         var lista = from l in turnosSeleccionados
@@ -176,9 +177,10 @@ namespace TP_Final
 
         private void btnReservarAhora_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 TurnoEntity turno = new TurnoEntity();
-                if(checkExistente.Checked)
+                if (checkExistente.Checked)
                 {
                     turno.cliente = new ClienteEntity
                     {
@@ -206,7 +208,8 @@ namespace TP_Final
                 txtNombreyApellido.Clear();
                 txtTelefono.Clear();
                 cmbClienteExistente.Text = "";
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 txtNombreyApellido.Clear();
@@ -280,12 +283,13 @@ namespace TP_Final
             {
                 cmbClienteExistente.Enabled = true;
                 txtTelefono.ReadOnly = true;
-
+                txtNombreyApellido.Enabled = false;
             }
             else
             {
                 cmbClienteExistente.Enabled = false;
                 txtTelefono.ReadOnly = false;
+                txtNombreyApellido.Enabled = true;
                 txtTelefono.Clear();
 
             }

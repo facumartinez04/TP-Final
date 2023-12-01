@@ -19,7 +19,6 @@ namespace DAL
                 {
                     Cliente cli = new Cliente
                     {
-                        ID_CLIENTE = cliente.idCliente,
                         NOMBRE_APELLIDO = cliente.nombreApellido,
                         TELEFONO = cliente.telefono,
                         usuario = cliente.usuario,
@@ -36,7 +35,33 @@ namespace DAL
             }
         }
 
+        public int agregarClienteDevolverID(ClienteEntity cliente)
+        {
+            try
+            {
+                using (TurnosContext turnosContext = new TurnosContext())
+                {
+                    
+                    var cli = new Cliente
+                    {
+                        NOMBRE_APELLIDO = cliente.nombreApellido,
+                        TELEFONO = cliente.telefono,
+                        usuario = cliente.usuario,
 
+                    };
+
+                    turnosContext.Cliente.Add(cli);
+                    turnosContext.SaveChanges();
+                    turnosContext.Entry(cli).GetDatabaseValues();
+                    return cli.ID_CLIENTE;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
         public void EliminarCliente(int id)

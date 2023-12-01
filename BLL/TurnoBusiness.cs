@@ -63,21 +63,34 @@ namespace BLL
             if (turno.DiaTurno.Date < DateTime.Now.Date) throw new Exception("Debe ser un dia mas adelante");
             bool TurnoRepetido = turnosDAO.listarTurnos().Any(x => x.peluquero.idPeluquero == turno.peluquero.idPeluquero && x.DiaTurno.Date == turno.DiaTurno.Date && x.Hora == turno.Hora);
             if (TurnoRepetido) throw new Exception("El peluquero ya tiene un turno asignado a esa hora");
-            if (turno.cliente.idCliente != 0)
+            using (var transaction = new TransactionScope())
+            {
+                if (turno.cliente.idCliente != 0)
             {
                 cliente = clienteDAO.getByID(Convert.ToInt32(turno.cliente.idCliente));
                 cliente.telefono = cliente.telefono;
                 cliente.nombreApellido = cliente.nombreApellido;
             }
-            using (var transaction = new TransactionScope())
+            else
             {
+                
+                int idCl = clienteDAO.agregarClienteDevolverID(new ClienteEntity
+                {
+                    nombreApellido = turno.cliente.nombreApellido,
+                    telefono = turno.cliente.telefono
+                });
+
+                turno.cliente.idCliente = idCl;
+            }
+           
+
                 turnosDAO.agregarTurno(turno);
                 transaction.Complete();
             }
         }
 
-
-
+        
+            
         public void eliminarTurno(int id)
         {
             TurnoEntity turnoBuscado =  turnosDAO.getbyID(id);
