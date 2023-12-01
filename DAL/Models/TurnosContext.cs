@@ -8,7 +8,7 @@ namespace DAL
     public partial class TurnosContext : DbContext
     {
         public TurnosContext()
-            : base("name=TurnosContext")
+            : base("name=TurnosDB")
         {
         }
 
@@ -41,11 +41,6 @@ namespace DAL
                 .Property(e => e.estado)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Cliente>()
-                .Property(e => e.ROL)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<LogIn>()
                 .Property(e => e.Usuario)
                 .IsUnicode(false);
@@ -53,11 +48,6 @@ namespace DAL
             modelBuilder.Entity<LogIn>()
                 .Property(e => e.Contraseña)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<LogIn>()
-            .Property(e => e.Rol)
-            .IsFixedLength()
-            .IsUnicode(false);
 
             modelBuilder.Entity<Peluquero>()
                 .Property(e => e.NOMBRE_APELLIDO)
@@ -75,9 +65,7 @@ namespace DAL
                 .Property(e => e.SERVICIO)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Turnos>()
-                .HasOptional(e => e.Turnos1)
-                .WithRequired(e => e.Turnos2);
+
 
             modelBuilder.Entity<Usuarios>()
                 .Property(e => e.usuario)

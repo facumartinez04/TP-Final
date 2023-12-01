@@ -39,6 +39,7 @@ namespace TP_Final
         {
             ListarCombos();
             ListarData();
+            MododPeluquero();
         }
 
         private void ListarCombos()

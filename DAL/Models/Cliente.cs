@@ -20,16 +20,16 @@ namespace DAL
         [StringLength(50)]
         public string TELEFONO { get; set; }
 
+
         [StringLength(50)]
         public string usuario { get; set; }
+
 
         [StringLength(50)]
         public string contraseña { get; set; }
 
+
         [StringLength(50)]
         public string estado { get; set; }
-
-        [StringLength(1)]
-        public string ROL { get; set; }
     }
 }
