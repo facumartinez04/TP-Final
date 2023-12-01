@@ -10,21 +10,16 @@ namespace BLL
 {
     public class SessionManager
     {
-
-
         private static SessionManager _instance = null;
         private static object _cerrado = new Object();
         public AuthEntity authDAO { get; set; }
 
-        private SessionManager() { 
-            
-        }
+        private SessionManager() { }
 
         public static SessionManager Instance
         {
             get
             {
-
                 lock (_cerrado)
                 {
                     if (_instance == null)
@@ -33,7 +28,6 @@ namespace BLL
                     }
                 }
                 return _instance;
-
             }
         }
 
@@ -61,6 +55,5 @@ namespace BLL
                 throw new Exception("Sesion no iniciada");
             }
         }
-
     }
 }
