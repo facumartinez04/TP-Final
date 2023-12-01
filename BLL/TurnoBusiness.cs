@@ -21,10 +21,7 @@ namespace BLL
         {
             return turnosDAO.listarTurnos();
         }
-
-
-
-
+        
         public void agregarTurnoCliente(TurnoEntity turno)
         {
             turno.Estado = "Asignado";
@@ -82,15 +79,12 @@ namespace BLL
 
                 turno.cliente.idCliente = idCl;
             }
-           
-
                 turnosDAO.agregarTurno(turno);
                 transaction.Complete();
             }
         }
 
         
-            
         public void eliminarTurno(int id)
         {
             TurnoEntity turnoBuscado =  turnosDAO.getbyID(id);
@@ -98,7 +92,6 @@ namespace BLL
 
             using (var transaction = new TransactionScope())
             {
-
                 turnosDAO.EliminarTurno(id);
                   transaction.Complete();
             }
@@ -113,11 +106,8 @@ namespace BLL
             using (var transaction = new TransactionScope())
             {
                 turnosDAO.EditarTurno(turnoeditar);
-
                 transaction.Complete();
             }
         }
-
-
     }
 }
