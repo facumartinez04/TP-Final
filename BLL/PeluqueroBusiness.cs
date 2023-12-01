@@ -17,17 +17,13 @@ namespace BLL
         {
             return peluquerosDAO.listarPeluqueros();
         }
-
-
+        
         public void EliminarPeluquero(int id)
         {
-
-
             PeluqueroEntity pelBuscado = peluquerosDAO.getbyID(id);
             if (pelBuscado == null) throw new Exception("El id que ingreso no existe");
             using (var transaction = new TransactionScope())
             {
-                
                 peluquerosDAO.EliminarPeluquero(id);
                 transaction.Complete();
             }
@@ -41,8 +37,5 @@ namespace BLL
                 transaction.Complete();             
             }
         }
-
-
-
     }
 }
