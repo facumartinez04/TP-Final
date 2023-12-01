@@ -19,5 +19,9 @@ namespace DAL
         [Required]
         [StringLength(50)]
         public string Contraseña { get; set; }
+
+
+        [StringLength(1)]
+        public string Rol { get; set; }
     }
 }

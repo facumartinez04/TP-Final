@@ -22,14 +22,17 @@ namespace TP_Final
         private string miUsuario = "";
         private string miNombreyApellido = "";
         private string telefono = "";
+        private int rol = 0;
+
         private int miCliente = 0;
-        public ReservaCliente(string miUsuario, string miNombreyApellido,string telefono,int idCliente)
+        public ReservaCliente(string miUsuario, string miNombreyApellido,string telefono,int idCliente,int rol)
         {
             InitializeComponent();
             this.miUsuario = miUsuario;
             this.miNombreyApellido = miNombreyApellido;
             this.telefono = telefono;
             this.miCliente = idCliente;
+            this.rol = rol;
         }
 
         private void ReservaCliente_Load(object sender, EventArgs e)
@@ -45,6 +48,18 @@ namespace TP_Final
             cmbPeluquero.ValueMember = "idPeluquero";
         }
 
+
+        private void MododPeluquero()
+        {
+            if(rol == 1)
+            {
+                gPeluquero.Visible = true;
+            }
+            else
+            {
+                gPeluquero.Visible = false;
+            }
+        }
 
         private void ListarData()
         {

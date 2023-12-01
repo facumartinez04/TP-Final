@@ -259,6 +259,12 @@
     <Compile Include="ReservaCliente.Designer.cs">
       <DependentUpon>ReservaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservaPeluquero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservaPeluquero.Designer.cs">
+      <DependentUpon>ReservaPeluquero.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Autentificar.resx">
       <DependentUpon>Autentificar.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +292,9 @@
     </Compile>
     <EmbeddedResource Include="ReservaCliente.resx">
       <DependentUpon>ReservaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservaPeluquero.resx">
+      <DependentUpon>ReservaPeluquero.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -34,8 +34,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -51,9 +49,6 @@
             this.txtIDEliminar = new System.Windows.Forms.TextBox();
             this.btnEliminarTurno = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkExistente = new System.Windows.Forms.CheckBox();
@@ -74,17 +69,22 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreyApellido = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,26 +140,6 @@
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Location = new System.Drawing.Point(811, 475);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(237, 163);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modo Admin";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 51);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Ver lista de peluqueros";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox4
             // 
@@ -316,35 +296,6 @@
             this.groupBox2.Size = new System.Drawing.Size(790, 440);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // cmbFiltro
-            // 
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "Fecha",
-            "ID Turno",
-            "Nombre y Apellido"});
-            this.cmbFiltro.Location = new System.Drawing.Point(106, 24);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(142, 21);
-            this.cmbFiltro.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "FILTRAR POR:";
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(265, 25);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(385, 20);
-            this.txtFiltro.TabIndex = 12;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -552,6 +503,55 @@
             this.txtNombreyApellido.Size = new System.Drawing.Size(147, 20);
             this.txtNombreyApellido.TabIndex = 0;
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(265, 25);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(385, 20);
+            this.txtFiltro.TabIndex = 12;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "FILTRAR POR:";
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Items.AddRange(new object[] {
+            "Fecha",
+            "ID Turno",
+            "Nombre y Apellido"});
+            this.cmbFiltro.Location = new System.Drawing.Point(106, 24);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(142, 21);
+            this.cmbFiltro.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 51);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Ver lista de peluqueros";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Location = new System.Drawing.Point(811, 475);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(237, 163);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Modo Admin";
+            // 
             // ReservaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,7 +568,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -578,6 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -598,13 +598,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReservarAhora;
         private System.Windows.Forms.DateTimePicker dtpFechaTurno;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIDEliminar;
         private System.Windows.Forms.Button btnEliminarTurno;
@@ -613,7 +609,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaEditar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEditarTurno;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.ComboBox cmbHoraEdit;
@@ -629,6 +624,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmbClienteExistente;
         private System.Windows.Forms.CheckBox checkExistente;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtFiltro;
     }
 }
 

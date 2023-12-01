@@ -13,5 +13,7 @@ namespace Entity
         public string telefono { get; set; }    
          public string usuario { get; set; }
 
+        public int rol { get; set; }
+
     }
 }

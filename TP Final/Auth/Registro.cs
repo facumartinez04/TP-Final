@@ -68,5 +68,14 @@ namespace TP_Final.Auth
         {
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login reg = new Login();
+            reg.Show();
+            reg.BringToFront();
+
+        }
     }
 }

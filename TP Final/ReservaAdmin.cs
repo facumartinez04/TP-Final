@@ -309,5 +309,10 @@ namespace TP_Final
         {
             ListarCombos();
         }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

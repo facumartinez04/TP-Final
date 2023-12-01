@@ -17,6 +17,7 @@ namespace Entity
 
         public int idCliente { get; set; }
 
+        public int rol { get; set; }
 
     }
 }

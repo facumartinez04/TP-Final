@@ -28,10 +28,11 @@ namespace DAL
         [StringLength(50)]
         public string SERVICIO { get; set; }
 
-
-
         [Column(TypeName = "date")]
         public DateTime DIA_TURNO { get; set; }
 
+        public virtual Turnos Turnos1 { get; set; }
+
+        public virtual Turnos Turnos2 { get; set; }
     }
 }

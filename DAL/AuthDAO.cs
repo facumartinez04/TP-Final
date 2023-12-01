@@ -44,6 +44,7 @@ namespace DAL
                     return new AuthEntity { 
                         Usuario = user.Usuario,
                         password = user.Contraseña,
+                        rol = Convert.ToInt32(user.Rol)
                     };
                 }
             }

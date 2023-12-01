@@ -70,7 +70,7 @@ namespace TP_Final.Auth
                 }
                 else
                 {
-                    ReservaCliente reserva = new ReservaCliente(entity.Usuario, entity.nombreyApellido,entity.telefono,entity.idCliente);
+                    ReservaCliente reserva = new ReservaCliente(entity.Usuario, entity.nombreyApellido,entity.telefono,entity.idCliente,entity.rol);
                     reserva.Show();
                     reserva.BringToFront();       
                     this.Hide();

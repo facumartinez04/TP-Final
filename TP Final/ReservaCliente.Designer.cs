@@ -50,6 +50,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.gPeluquero = new System.Windows.Forms.GroupBox();
+            this.cmbPel = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnIngreso = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gPeluquero.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -179,9 +184,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(266, 42);
+            this.groupBox2.Location = new System.Drawing.Point(266, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(682, 477);
+            this.groupBox2.Size = new System.Drawing.Size(682, 436);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -190,7 +195,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(670, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 398);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox3
@@ -233,7 +238,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(760, 12);
+            this.button2.Location = new System.Drawing.Point(760, 28);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 31);
             this.button2.TabIndex = 20;
@@ -271,11 +276,48 @@
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
+            // gPeluquero
+            // 
+            this.gPeluquero.Controls.Add(this.btnIngreso);
+            this.gPeluquero.Controls.Add(this.textBox1);
+            this.gPeluquero.Controls.Add(this.cmbPel);
+            this.gPeluquero.Location = new System.Drawing.Point(272, 11);
+            this.gPeluquero.Name = "gPeluquero";
+            this.gPeluquero.Size = new System.Drawing.Size(466, 69);
+            this.gPeluquero.TabIndex = 24;
+            this.gPeluquero.TabStop = false;
+            this.gPeluquero.Text = "Modo peluquero";
+            // 
+            // cmbPel
+            // 
+            this.cmbPel.FormattingEnabled = true;
+            this.cmbPel.Location = new System.Drawing.Point(18, 27);
+            this.cmbPel.Name = "cmbPel";
+            this.cmbPel.Size = new System.Drawing.Size(143, 21);
+            this.cmbPel.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(182, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.TabIndex = 15;
+            // 
+            // btnIngreso
+            // 
+            this.btnIngreso.Location = new System.Drawing.Point(324, 19);
+            this.btnIngreso.Name = "btnIngreso";
+            this.btnIngreso.Size = new System.Drawing.Size(105, 34);
+            this.btnIngreso.TabIndex = 14;
+            this.btnIngreso.Text = "Ingresar Modo Peluquero";
+            this.btnIngreso.UseVisualStyleBackColor = true;
+            // 
             // ReservaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 542);
+            this.Controls.Add(this.gPeluquero);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -296,6 +338,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gPeluquero.ResumeLayout(false);
+            this.gPeluquero.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -323,5 +367,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox gPeluquero;
+        private System.Windows.Forms.Button btnIngreso;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbPel;
     }
 }

@@ -17,6 +17,9 @@ namespace BLL
         public void registro(AuthEntity auth)
         {
 
+            AuthEntity authEntity = AuthDAO.getByUser(auth.Usuario);
+            if (authEntity != null) throw new Exception("El usuario ya esta registrado");
+
             auth.password = contra.Encriptar(auth.password);
 
             ClienteEntity cliente = new ClienteEntity {
