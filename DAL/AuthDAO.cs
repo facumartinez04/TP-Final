@@ -30,9 +30,6 @@ namespace DAL
             }
         }
 
-  
-
-
         public AuthEntity getByUser(string User)
         {
             try
@@ -77,8 +74,5 @@ namespace DAL
                 throw ex;
             }
         }
-
-
-
     }
 }
