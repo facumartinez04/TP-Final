@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace BLL
 {
@@ -24,12 +25,21 @@ namespace BLL
 
             PeluqueroEntity pelBuscado = peluquerosDAO.getbyID(id);
             if (pelBuscado == null) throw new Exception("El id que ingreso no existe");
-            peluquerosDAO.EliminarPeluquero(id);
+            using (var transaction = new TransactionScope())
+            {
+                
+                peluquerosDAO.EliminarPeluquero(id);
+                transaction.Complete();
+            }
         }
 
         public void AgregarPeluquero(PeluqueroEntity peluquero)
         {
-            peluquerosDAO.agregarPeluquero(peluquero);
+            using (var transaction = new TransactionScope())
+            {
+                peluquerosDAO.agregarPeluquero(peluquero);
+                transaction.Complete();             
+            }
         }
 
 

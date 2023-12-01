@@ -20,6 +20,12 @@ namespace TP_Final
 
         private PeluqueroBusiness PeluqueroBusiness = new PeluqueroBusiness();
 
+
+        private ClienteBusiness clienteBusiness = new ClienteBusiness();
+
+
+
+
         public ReservaAdmin()
         {
             InitializeComponent();
@@ -28,6 +34,8 @@ namespace TP_Final
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
             ListarData();
+            cmbClienteExistente.Enabled = false;
+
             ListarCombos();
 
         }
@@ -39,6 +47,15 @@ namespace TP_Final
             cmbPeluquero.DataSource = PeluqueroBusiness.listaPeluqueros();
             cmbPeluquero.DisplayMember = "nombreApellidoPeluquero";
             cmbPeluquero.ValueMember = "idPeluquero";
+
+
+
+
+            cmbClienteExistente.DataSource = clienteBusiness.listarClientes();
+            cmbClienteExistente.DisplayMember = "nombreApellido";
+            cmbClienteExistente.ValueMember = "idCliente";
+
+
         }
 
 
@@ -161,10 +178,21 @@ namespace TP_Final
         {
             try {
                 TurnoEntity turno = new TurnoEntity();
-                turno.cliente = new ClienteEntity  {
-                    nombreApellido = txtNombreyApellido.Text,
-                    telefono = txtTelefono.Text,
-                };
+                if(checkExistente.Checked)
+                {
+                    turno.cliente = new ClienteEntity
+                    {
+                        idCliente = Convert.ToInt32(cmbClienteExistente.SelectedValue),
+                    };
+                }
+                else
+                {
+                    turno.cliente = new ClienteEntity
+                    {
+                        nombreApellido = txtNombreyApellido.Text,
+                        telefono = txtTelefono.Text,
+                    };
+                }
                 turno.peluquero = new PeluqueroEntity
                 {
                     idPeluquero = Convert.ToInt32(cmbPeluquero.SelectedValue),
@@ -172,12 +200,18 @@ namespace TP_Final
                 turno.DiaTurno = Convert.ToDateTime(dtpFechaTurno.Value.Date);
                 turno.Hora = TimeSpan.Parse(cmbHorario.Text);
                 turno.Servicio = cmbServicio.Text;
-                turnoBusiness.agregarTurno(turno);
+                turnoBusiness.agregarTurnoAdmin(turno);
                 MessageBox.Show("Se agrego correctamente");
                 ListarData();
+                txtNombreyApellido.Clear();
+                txtTelefono.Clear();
+                cmbClienteExistente.Text = "";
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                txtNombreyApellido.Clear();
+                txtTelefono.Clear();
+                cmbClienteExistente.Text = "";
             }
         }
 
@@ -228,6 +262,48 @@ namespace TP_Final
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbClienteExistente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkExistente.Checked)
+            {
+                ClienteEntity clienteSeleccionado = clienteBusiness.listarClientes().ToList().Find(x => x.idCliente == Convert.ToInt32(cmbClienteExistente.SelectedValue));
+
+                txtTelefono.Text = clienteSeleccionado.telefono;
+            }
+        }
+
+        private void checkExistente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkExistente.Checked)
+            {
+                cmbClienteExistente.Enabled = true;
+                txtTelefono.ReadOnly = true;
+
+            }
+            else
+            {
+                cmbClienteExistente.Enabled = false;
+                txtTelefono.ReadOnly = false;
+                txtTelefono.Clear();
+
+            }
+        }
+
+        private void cmbServicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReservaAdmin_Activated(object sender, EventArgs e)
+        {
+            ListarCombos();
         }
     }
 }

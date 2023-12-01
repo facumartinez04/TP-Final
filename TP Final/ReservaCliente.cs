@@ -89,7 +89,7 @@ namespace TP_Final
                 turno.DiaTurno = Convert.ToDateTime(dtpFechaTurno.Value.Date);
                 turno.Hora = TimeSpan.Parse(cmbHorario.Text);
                 turno.Servicio = cmbServicio.Text;
-                turnoBusiness.agregarTurno(turno);
+                turnoBusiness.agregarTurnoCliente(turno);
                 MessageBox.Show("Se agrego correctamente");
                 ListarData();
             }

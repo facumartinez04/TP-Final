@@ -37,7 +37,7 @@ namespace BLL
             if (auth.password !=  contra.DesEncriptar(authEntity.password)) throw new Exception("La contraseña es incorrecta");
             if (auth.Usuario == "admin") return authEntity;
 
-            ClienteEntity cliente = clienteDAO.getbyID(auth.Usuario);
+            ClienteEntity cliente = clienteDAO.getByUsuario(auth.Usuario);
             authEntity.telefono = cliente.telefono;
             authEntity.nombreyApellido = cliente.nombreApellido;
             authEntity.idCliente = cliente.idCliente;

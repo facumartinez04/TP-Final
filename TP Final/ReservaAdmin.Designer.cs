@@ -30,8 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservaAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -53,6 +56,9 @@
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkExistente = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbClienteExistente = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
@@ -68,21 +74,17 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreyApellido = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,9 +100,49 @@
             this.panel1.Size = new System.Drawing.Size(1062, 654);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1059, 12);
+            this.panel2.TabIndex = 4;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::TP_Final.Properties.Resources.Barber;
+            this.pictureBox3.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(414, 13);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TP_Final.Properties.Resources.Barber;
+            this.pictureBox1.Location = new System.Drawing.Point(391, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(414, 13);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TP_Final.Properties.Resources.Barber;
+            this.pictureBox2.Location = new System.Drawing.Point(649, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(441, 12);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Location = new System.Drawing.Point(811, 475);
             this.groupBox5.Name = "groupBox5";
@@ -109,20 +151,11 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Modo Admin";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(225, 51);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Administrar los privilegios";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Location = new System.Drawing.Point(21, 90);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 51);
+            this.button1.Size = new System.Drawing.Size(184, 51);
             this.button1.TabIndex = 16;
             this.button1.Text = "Ver lista de peluqueros";
             this.button1.UseVisualStyleBackColor = true;
@@ -323,6 +356,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkExistente);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.cmbClienteExistente);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cmbHorario);
@@ -343,6 +379,36 @@
             this.groupBox1.Size = new System.Drawing.Size(237, 620);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // checkExistente
+            // 
+            this.checkExistente.AutoSize = true;
+            this.checkExistente.Location = new System.Drawing.Point(6, 94);
+            this.checkExistente.Name = "checkExistente";
+            this.checkExistente.Size = new System.Drawing.Size(97, 17);
+            this.checkExistente.TabIndex = 22;
+            this.checkExistente.Text = "Elegir existente";
+            this.checkExistente.UseVisualStyleBackColor = true;
+            this.checkExistente.CheckedChanged += new System.EventHandler(this.checkExistente_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(117, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Elegir Cliente Existente:";
+            // 
+            // cmbClienteExistente
+            // 
+            this.cmbClienteExistente.FormattingEnabled = true;
+            this.cmbClienteExistente.Location = new System.Drawing.Point(6, 66);
+            this.cmbClienteExistente.Name = "cmbClienteExistente";
+            this.cmbClienteExistente.Size = new System.Drawing.Size(146, 21);
+            this.cmbClienteExistente.TabIndex = 20;
+            this.cmbClienteExistente.SelectedIndexChanged += new System.EventHandler(this.cmbClienteExistente_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -374,7 +440,7 @@
             "14:00",
             "15:00",
             "16:00"});
-            this.cmbHorario.Location = new System.Drawing.Point(10, 248);
+            this.cmbHorario.Location = new System.Drawing.Point(10, 255);
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(143, 21);
             this.cmbHorario.TabIndex = 12;
@@ -383,7 +449,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 44);
+            this.label6.Location = new System.Drawing.Point(5, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 22);
             this.label6.TabIndex = 11;
@@ -391,7 +457,7 @@
             // 
             // btnReservarAhora
             // 
-            this.btnReservarAhora.Location = new System.Drawing.Point(11, 503);
+            this.btnReservarAhora.Location = new System.Drawing.Point(10, 486);
             this.btnReservarAhora.Name = "btnReservarAhora";
             this.btnReservarAhora.Size = new System.Drawing.Size(142, 34);
             this.btnReservarAhora.TabIndex = 10;
@@ -401,7 +467,7 @@
             // 
             // dtpFechaTurno
             // 
-            this.dtpFechaTurno.Location = new System.Drawing.Point(10, 439);
+            this.dtpFechaTurno.Location = new System.Drawing.Point(10, 431);
             this.dtpFechaTurno.Name = "dtpFechaTurno";
             this.dtpFechaTurno.Size = new System.Drawing.Size(155, 20);
             this.dtpFechaTurno.TabIndex = 9;
@@ -431,10 +497,11 @@
             "Corte",
             "Corte + Barba",
             "Corte + Barba + Teñir"});
-            this.cmbServicio.Location = new System.Drawing.Point(9, 367);
+            this.cmbServicio.Location = new System.Drawing.Point(9, 372);
             this.cmbServicio.Name = "cmbServicio";
             this.cmbServicio.Size = new System.Drawing.Size(143, 21);
             this.cmbServicio.TabIndex = 6;
+            this.cmbServicio.SelectedIndexChanged += new System.EventHandler(this.cmbServicio_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -448,7 +515,7 @@
             // cmbPeluquero
             // 
             this.cmbPeluquero.FormattingEnabled = true;
-            this.cmbPeluquero.Location = new System.Drawing.Point(9, 309);
+            this.cmbPeluquero.Location = new System.Drawing.Point(9, 314);
             this.cmbPeluquero.Name = "cmbPeluquero";
             this.cmbPeluquero.Size = new System.Drawing.Size(143, 21);
             this.cmbPeluquero.TabIndex = 4;
@@ -456,7 +523,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 160);
+            this.label2.Location = new System.Drawing.Point(3, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
@@ -464,7 +531,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(6, 179);
+            this.txtTelefono.Location = new System.Drawing.Point(6, 200);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(147, 20);
             this.txtTelefono.TabIndex = 2;
@@ -472,7 +539,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 99);
+            this.label1.Location = new System.Drawing.Point(7, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 1;
@@ -480,51 +547,10 @@
             // 
             // txtNombreyApellido
             // 
-            this.txtNombreyApellido.Location = new System.Drawing.Point(6, 118);
+            this.txtNombreyApellido.Location = new System.Drawing.Point(6, 151);
             this.txtNombreyApellido.Name = "txtNombreyApellido";
             this.txtNombreyApellido.Size = new System.Drawing.Size(147, 20);
             this.txtNombreyApellido.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::TP_Final.Properties.Resources.Barber;
-            this.pictureBox3.Location = new System.Drawing.Point(3, -1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(414, 13);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1059, 12);
-            this.panel2.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TP_Final.Properties.Resources.Barber;
-            this.pictureBox1.Location = new System.Drawing.Point(391, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 13);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TP_Final.Properties.Resources.Barber;
-            this.pictureBox2.Location = new System.Drawing.Point(649, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(441, 12);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // ReservaAdmin
             // 
@@ -535,8 +561,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReservaAdmin";
             this.Text = "Control de turnos";
+            this.Activated += new System.EventHandler(this.ReservaAdmin_Activated);
             this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -547,10 +578,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,7 +598,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReservarAhora;
         private System.Windows.Forms.DateTimePicker dtpFechaTurno;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label6;
@@ -588,7 +614,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEditarTurno;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.ComboBox cmbHoraEdit;
@@ -600,6 +625,10 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbClienteExistente;
+        private System.Windows.Forms.CheckBox checkExistente;
     }
 }
 

@@ -58,7 +58,25 @@ namespace DAL
         }
 
 
-        public ClienteEntity getbyID(string usuario)
+        public ClienteEntity getByID(int id)
+        {
+            try
+            {
+                using (TurnosContext turnosContext = new TurnosContext())
+                {
+                    Cliente cliente = turnosContext.Cliente.FirstOrDefault(t => t.ID_CLIENTE == id);
+                    return getClienteEntitybyCliente(cliente);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        public ClienteEntity getByUsuario(string usuario)
         {
             try
             {
@@ -66,6 +84,25 @@ namespace DAL
                 {
                     Cliente cliente = turnosContext.Cliente.FirstOrDefault(t => t.usuario == usuario);
                     return getClienteEntitybyCliente(cliente);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public List<ClienteEntity> listarClientes()
+        {
+            try
+            {
+                using (TurnosContext turnosContext = new TurnosContext())
+                {
+
+                    List<Cliente> listaCliente = turnosContext.Cliente.ToList();
+
+                    return listaCliente.Select(s => getClienteEntitybyCliente(s)).ToList();
                 }
             }
             catch (Exception ex)
