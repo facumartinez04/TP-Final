@@ -55,5 +55,30 @@ namespace DAL
         }
 
 
+        public List<AuthEntity> listAuth()
+        {
+            try
+            {
+                using (TurnosContext turnosContext = new TurnosContext())
+                {
+                    List<LogIn> peluqueroLista = turnosContext.LogIn.ToList();
+
+                    return peluqueroLista.Select(auth => new AuthEntity
+                    {
+                        Usuario = auth.Usuario,
+                        password = auth.Contraseña,
+                        rol = Convert.ToInt32(auth.Rol)
+                    }).ToList();
+              
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
     }
 }

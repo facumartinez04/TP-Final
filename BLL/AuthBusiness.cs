@@ -33,6 +33,11 @@ namespace BLL
         }
 
 
+        public List<AuthEntity> listAuth()
+        {
+            return AuthDAO.listAuth();
+        }
+
         public AuthEntity Login(AuthEntity auth)
         {
             AuthEntity authEntity = AuthDAO.getByUser(auth.Usuario);
